@@ -2,6 +2,10 @@
 
 [Documentation Index](../README.md)
 
+```ts
+import {use} from "https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.1/mod.ts"
+```
+
 `function` use\<T>(promise: Promise\<T>): [UsedPromise](../private.class.UsedPromise/README.md)\<T>
 
 Wraps a Promise to a Disposable object, that can be bound to a await-using statement.
@@ -12,10 +16,11 @@ In the other hand, it's quite easy to miss the awaiting, when an exception is th
 
 Example:
 ```ts
-// To run this example:
-// deno run --allow-read --allow-write example.ts
+// To download and run this example:
+// curl 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.1/generated-doc/function.use/README.md' | perl -ne 's/^> //; $y=$1 if /^```(.)?/; print $_ if $y&&$m; $m=$y&&$m+/<example-7ic5>/' > /tmp/example-7ic5.ts
+// deno run --allow-read --allow-write /tmp/example-7ic5.ts
 
-import {use} from '../mod.ts';
+import {use} from 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.1/mod.ts';
 
 async function download(url: string)
 {	const resp = await fetch(url);

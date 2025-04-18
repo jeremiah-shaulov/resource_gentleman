@@ -1,6 +1,6 @@
 <!--
 	This file is generated with the following command:
-	deno run --allow-all https://raw.githubusercontent.com/jeremiah-shaulov/tsa/v0.0.50/tsa.ts doc-md --outFile=README.md mod.ts
+	deno run --allow-all https://raw.githubusercontent.com/jeremiah-shaulov/tsa/v0.0.50/tsa.ts doc-md --outFile=README.md --outUrl=https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.1/README.md --importUrl=https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.1/mod.ts mod.ts
 -->
 
 # resource_gentleman - Reference counting in TypeScript.
@@ -33,10 +33,11 @@ and will dispose of the resource when all owners are gone.
 To create a reference counted object, use [rc()](generated-doc/function.rc/README.md) function from this library, and bind it's result to a "using" (or "await-using") variable.
 
 ```ts
-// To run this example:
-// deno run --allow-read --allow-write example.ts
+// To download and run this example:
+// curl 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.1/README.md' | perl -ne 's/^> //; $y=$1 if /^```(.)?/; print $_ if $y&&$m; $m=$y&&$m+/<example-p9mn>/' > /tmp/example-p9mn.ts
+// deno run --allow-read --allow-write /tmp/example-p9mn.ts
 
-import {rc} from './mod.ts';
+import {rc} from 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.1/mod.ts';
 
 // Create a reference counted resource
 using fd = rc(await Deno.open('/tmp/test.txt', {create: true, write: true}));
@@ -51,10 +52,11 @@ The resource is freed when the counter reaches zero.
 If the object given to [rc()](generated-doc/function.rc/README.md) is already a reference counted object, the counter is incremented and the same object instance is returned.
 
 ```ts
-// To run this example:
-// deno run --allow-read --allow-write example.ts
+// To download and run this example:
+// curl 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.1/README.md' | perl -ne 's/^> //; $y=$1 if /^```(.)?/; print $_ if $y&&$m; $m=$y&&$m+/<example-65ya>/' > /tmp/example-65ya.ts
+// deno run --allow-read --allow-write /tmp/example-65ya.ts
 
-import {rc} from './mod.ts';
+import {rc} from 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.1/mod.ts';
 
 // Create a reference counted resource
 using fd = rc(await Deno.open('/tmp/test.txt', {create: true, write: true}));
@@ -83,10 +85,11 @@ If during this time you rebind the object to another "using" variable, it will r
 and until it gets called you can rebind the object.
 
 ```ts
-// To run this example:
-// deno run --allow-read --allow-write example.ts
+// To download and run this example:
+// curl 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.1/README.md' | perl -ne 's/^> //; $y=$1 if /^```(.)?/; print $_ if $y&&$m; $m=$y&&$m+/<example-pf4z>/' > /tmp/example-pf4z.ts
+// deno run --allow-read --allow-write /tmp/example-pf4z.ts
 
-import {rc} from './mod.ts';
+import {rc} from 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.1/mod.ts';
 
 async function getFile()
 {	using fd = rc(await Deno.open('/tmp/test.txt', {create: true, write: true}));
@@ -113,10 +116,11 @@ In this case, if the returned promise becomes rejected, the corresponding error 
 To pass the reference counted object to another function, where it will be bound to a variable, do like this:
 
 ```ts
-// To run this example:
-// deno run --allow-read --allow-write example.ts
+// To download and run this example:
+// curl 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.1/README.md' | perl -ne 's/^> //; $y=$1 if /^```(.)?/; print $_ if $y&&$m; $m=$y&&$m+/<example-ksv8>/' > /tmp/example-ksv8.ts
+// deno run --allow-read --allow-write /tmp/example-ksv8.ts
 
-import {rc} from './mod.ts';
+import {rc} from 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.1/mod.ts';
 
 async function processFile(fd: Deno.FsFile)
 {	using fd2 = rc(fd);
@@ -137,8 +141,9 @@ then awaiting the first of them, handling the result, then awaiting the other on
 Don't do this way. Here is what will happen:
 
 ```ts
-// To run this example:
-// deno run --allow-read --allow-write example.ts
+// To download and run this example:
+// curl 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.1/README.md' | perl -ne 's/^> //; $y=$1 if /^```(.)?/; print $_ if $y&&$m; $m=$y&&$m+/<example-rlut>/' > /tmp/example-rlut.ts
+// deno run --allow-read --allow-write /tmp/example-rlut.ts
 
 async function download(url: string)
 {	const resp = await fetch(url);
@@ -175,10 +180,11 @@ At the end of the block this promise will be awaited, even if the caller does no
 Rejected and not explicitly awaited promise will throw exception at the end of the block.
 
 ```ts
-// To run this example:
-// deno run --allow-read --allow-write example.ts
+// To download and run this example:
+// curl 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.1/README.md' | perl -ne 's/^> //; $y=$1 if /^```(.)?/; print $_ if $y&&$m; $m=$y&&$m+/<example-ajdy>/' > /tmp/example-ajdy.ts
+// deno run --allow-read --allow-write /tmp/example-ajdy.ts
 
-import {use} from './mod.ts';
+import {use} from 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.1/mod.ts';
 
 async function download(url: string)
 {	const resp = await fetch(url);
