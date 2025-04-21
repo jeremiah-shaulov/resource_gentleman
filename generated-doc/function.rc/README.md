@@ -3,7 +3,7 @@
 [Documentation Index](../README.md)
 
 ```ts
-import {rc} from "https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.1/mod.ts"
+import {rc} from "https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.2/mod.ts"
 ```
 
 `function` rc\<T `extends` Disposable | AsyncDisposable>(subj: T): Rc
@@ -25,10 +25,10 @@ and when it reaches zero, the original object will be disposed of.
 Example:
 ```ts
 // To download and run this example:
-// curl 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.1/generated-doc/function.rc/README.md' | perl -ne 's/^> //; $y=$1 if /^```(.)?/; print $_ if $y&&$m; $m=$y&&$m+/<example-hemm>/' > /tmp/example-hemm.ts
+// curl 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.2/generated-doc/function.rc/README.md' | perl -ne 's/^> //; $y=$1 if /^```(.)?/; print $_ if $y&&$m; $m=$y&&$m+/<example-hemm>/' > /tmp/example-hemm.ts
 // deno run --allow-read --allow-write /tmp/example-hemm.ts
 
-import {rc} from 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.1/mod.ts';
+import {rc} from 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.2/mod.ts';
 
 // Create a reference counted resource
 using fd = rc(await Deno.open('/tmp/test.txt', {create: true, write: true}));
@@ -56,10 +56,10 @@ This allows to return the object from a function where it's bound to a "using" v
 Example:
 ```ts
 // To download and run this example:
-// curl 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.1/generated-doc/function.rc/README.md' | perl -ne 's/^> //; $y=$1 if /^```(.)?/; print $_ if $y&&$m; $m=$y&&$m+/<example-5equ>/' > /tmp/example-5equ.ts
+// curl 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.2/generated-doc/function.rc/README.md' | perl -ne 's/^> //; $y=$1 if /^```(.)?/; print $_ if $y&&$m; $m=$y&&$m+/<example-5equ>/' > /tmp/example-5equ.ts
 // deno run --allow-read --allow-write /tmp/example-5equ.ts
 
-import {rc} from 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.1/mod.ts';
+import {rc} from 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.2/mod.ts';
 
 async function getFile()
 {	using fd = rc(await Deno.open('/tmp/test.txt', {create: true, write: true}));
@@ -87,10 +87,10 @@ To pass the reference counted object to another function, where it will be bound
 
 ```ts
 // To download and run this example:
-// curl 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.1/generated-doc/function.rc/README.md' | perl -ne 's/^> //; $y=$1 if /^```(.)?/; print $_ if $y&&$m; $m=$y&&$m+/<example-mnxj>/' > /tmp/example-mnxj.ts
+// curl 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.2/generated-doc/function.rc/README.md' | perl -ne 's/^> //; $y=$1 if /^```(.)?/; print $_ if $y&&$m; $m=$y&&$m+/<example-mnxj>/' > /tmp/example-mnxj.ts
 // deno run --allow-read --allow-write /tmp/example-mnxj.ts
 
-import {rc} from 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.1/mod.ts';
+import {rc} from 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.2/mod.ts';
 
 async function processFile(fd: Deno.FsFile)
 {	using fd2 = rc(fd);

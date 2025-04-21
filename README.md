@@ -1,6 +1,6 @@
 <!--
 	This file is generated with the following command:
-	deno run --allow-all https://raw.githubusercontent.com/jeremiah-shaulov/tsa/v0.0.50/tsa.ts doc-md --outFile=README.md --outUrl=https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.1/README.md --importUrl=https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.1/mod.ts mod.ts
+	deno run --allow-all https://raw.githubusercontent.com/jeremiah-shaulov/tsa/v0.0.50/tsa.ts doc-md --outFile=README.md --outUrl=https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.2/README.md --importUrl=https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.2/mod.ts mod.ts
 -->
 
 # resource_gentleman - Reference counting in TypeScript.
@@ -34,10 +34,10 @@ To create a reference counted object, use [rc()](generated-doc/function.rc/READM
 
 ```ts
 // To download and run this example:
-// curl 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.1/README.md' | perl -ne 's/^> //; $y=$1 if /^```(.)?/; print $_ if $y&&$m; $m=$y&&$m+/<example-p9mn>/' > /tmp/example-p9mn.ts
+// curl 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.2/README.md' | perl -ne 's/^> //; $y=$1 if /^```(.)?/; print $_ if $y&&$m; $m=$y&&$m+/<example-p9mn>/' > /tmp/example-p9mn.ts
 // deno run --allow-read --allow-write /tmp/example-p9mn.ts
 
-import {rc} from 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.1/mod.ts';
+import {rc} from 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.2/mod.ts';
 
 // Create a reference counted resource
 using fd = rc(await Deno.open('/tmp/test.txt', {create: true, write: true}));
@@ -53,10 +53,10 @@ If the object given to [rc()](generated-doc/function.rc/README.md) is already a 
 
 ```ts
 // To download and run this example:
-// curl 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.1/README.md' | perl -ne 's/^> //; $y=$1 if /^```(.)?/; print $_ if $y&&$m; $m=$y&&$m+/<example-65ya>/' > /tmp/example-65ya.ts
+// curl 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.2/README.md' | perl -ne 's/^> //; $y=$1 if /^```(.)?/; print $_ if $y&&$m; $m=$y&&$m+/<example-65ya>/' > /tmp/example-65ya.ts
 // deno run --allow-read --allow-write /tmp/example-65ya.ts
 
-import {rc} from 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.1/mod.ts';
+import {rc} from 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.2/mod.ts';
 
 // Create a reference counted resource
 using fd = rc(await Deno.open('/tmp/test.txt', {create: true, write: true}));
@@ -86,10 +86,10 @@ and until it gets called you can rebind the object.
 
 ```ts
 // To download and run this example:
-// curl 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.1/README.md' | perl -ne 's/^> //; $y=$1 if /^```(.)?/; print $_ if $y&&$m; $m=$y&&$m+/<example-pf4z>/' > /tmp/example-pf4z.ts
+// curl 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.2/README.md' | perl -ne 's/^> //; $y=$1 if /^```(.)?/; print $_ if $y&&$m; $m=$y&&$m+/<example-pf4z>/' > /tmp/example-pf4z.ts
 // deno run --allow-read --allow-write /tmp/example-pf4z.ts
 
-import {rc} from 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.1/mod.ts';
+import {rc} from 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.2/mod.ts';
 
 async function getFile()
 {	using fd = rc(await Deno.open('/tmp/test.txt', {create: true, write: true}));
@@ -117,10 +117,10 @@ To pass the reference counted object to another function, where it will be bound
 
 ```ts
 // To download and run this example:
-// curl 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.1/README.md' | perl -ne 's/^> //; $y=$1 if /^```(.)?/; print $_ if $y&&$m; $m=$y&&$m+/<example-ksv8>/' > /tmp/example-ksv8.ts
+// curl 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.2/README.md' | perl -ne 's/^> //; $y=$1 if /^```(.)?/; print $_ if $y&&$m; $m=$y&&$m+/<example-ksv8>/' > /tmp/example-ksv8.ts
 // deno run --allow-read --allow-write /tmp/example-ksv8.ts
 
-import {rc} from 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.1/mod.ts';
+import {rc} from 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.2/mod.ts';
 
 async function processFile(fd: Deno.FsFile)
 {	using fd2 = rc(fd);
@@ -142,7 +142,7 @@ Don't do this way. Here is what will happen:
 
 ```ts
 // To download and run this example:
-// curl 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.1/README.md' | perl -ne 's/^> //; $y=$1 if /^```(.)?/; print $_ if $y&&$m; $m=$y&&$m+/<example-rlut>/' > /tmp/example-rlut.ts
+// curl 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.2/README.md' | perl -ne 's/^> //; $y=$1 if /^```(.)?/; print $_ if $y&&$m; $m=$y&&$m+/<example-rlut>/' > /tmp/example-rlut.ts
 // deno run --allow-read --allow-write /tmp/example-rlut.ts
 
 async function download(url: string)
@@ -181,10 +181,10 @@ Rejected and not explicitly awaited promise will throw exception at the end of t
 
 ```ts
 // To download and run this example:
-// curl 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.1/README.md' | perl -ne 's/^> //; $y=$1 if /^```(.)?/; print $_ if $y&&$m; $m=$y&&$m+/<example-ajdy>/' > /tmp/example-ajdy.ts
+// curl 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.2/README.md' | perl -ne 's/^> //; $y=$1 if /^```(.)?/; print $_ if $y&&$m; $m=$y&&$m+/<example-ajdy>/' > /tmp/example-ajdy.ts
 // deno run --allow-read --allow-write /tmp/example-ajdy.ts
 
-import {use} from 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.1/mod.ts';
+import {use} from 'https://raw.githubusercontent.com/jeremiah-shaulov/resource_gentleman/v0.0.2/mod.ts';
 
 async function download(url: string)
 {	const resp = await fetch(url);
@@ -208,3 +208,5 @@ catch (e)
 
 console.log('Done');
 ```
+
+If a rejected promise was awaited in the block, the exception will be thrown only at the point of awaiting, and will be ignored at the end of the block.

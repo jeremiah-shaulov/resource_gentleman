@@ -194,6 +194,8 @@
 	console.log('Done');
 	```
 
+	If a rejected promise was awaited in the block, the exception will be thrown only at the point of awaiting, and will be ignored at the end of the block.
+
 	@module
 	@summary resource_gentleman - Reference counting in TypeScript.
  **/
